@@ -61,23 +61,23 @@ class report_analytics_dashboard_renderable implements renderable
     public function report_generate_analytics_dashboard()
     {
         global $USER;
-        echo $host = "https://moodle-charts-ng.web.app";
-        return $this->libraries .
-                $this->getEmbedObject($USER->id,
-                    'd38827d33f32d775c3f1',
-                    '7d7e9038a1cdbceb3d53',
-                    'eb2635ab82f006877924',
-                    '8ce323b8b996e553d51e',
-                    '674161638ad6eeed8cc2');
+        return $this->createNgEmbedTags($USER->id,
+            'd38827d33f32d775c3f1',
+            '7d7e9038a1cdbceb3d53',
+            'eb2635ab82f006877924',
+            '8ce323b8b996e553d51e',
+            '05ab6bb73cc3019d7c21');
     }
 
-    private function getEmbedObject($userId, $cssVersion, $runtimeVersion, $ployfullsES5Version, $polyfillsVersion, $mainVersion) {
-        return
-        "<link rel=\"stylesheet\" href=\"$this->host/styles.$cssVersion.css\"
+    private function createNgEmbedTags($userId, $cssVersion, $runtimeVersion, $ployfullsES5Version, $polyfillsVersion, $mainVersion)
+    {
+        $ngTags = "<link rel=\"stylesheet\" href=\"$this->host/styles.$cssVersion.css\"
         ><app-root userId=\"$userId\">
         <script src=\"$this->host/runtime.$runtimeVersion.js\" defer></script>
         <script src=\"$this->host/polyfills-es5.$ployfullsES5Version.js\" nomodule defer></script>
         <script src=\"$this->host/polyfills.$polyfillsVersion.js\" defer></script>
         <script src=\"$this->host/main.$mainVersion.js\" defer></script>";
+
+        $outputTag = $this->libraries . $ngTags;
     }
 }
