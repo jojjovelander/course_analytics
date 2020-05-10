@@ -27,7 +27,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $capabilities = array(
-    
+
     'report/analytics_dashboard:view' => array(
         'riskbitmask' => RISK_PERSONAL,
         'captype' => 'read',
@@ -39,19 +39,6 @@ $capabilities = array(
         ),
 
         'clonepermissionsfrom' => 'coursereport/log:view',
-    ),
-
-    'report/analytics_dashboard:viewtoday' => array(
-        'riskbitmask' => RISK_PERSONAL,
-        'captype' => 'read',
-        'contextlevel' => CONTEXT_COURSE,
-        'archetypes' => array(
-            'teacher' => CAP_ALLOW,
-            'editingteacher' => CAP_ALLOW,
-            'manager' => CAP_ALLOW
-        ),
-
-        'clonepermissionsfrom' => 'coursereport/log:viewtoday',
     )
 );
 
