@@ -22,7 +22,6 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die;
-require_once($CFG->dirroot . '/report/graphic/classes/report_graphic.php');
 
 /**
  * Analytics Dashboard renderable class
@@ -78,6 +77,6 @@ class report_analytics_dashboard_renderable implements renderable
         <script src=\"$this->host/polyfills.$polyfillsVersion.js\" defer></script>
         <script src=\"$this->host/main.$mainVersion.js\" defer></script>";
 
-        $outputTag = $this->libraries . $ngTags;
+        return $this->libraries . $ngTags;
     }
 }
