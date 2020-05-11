@@ -24,18 +24,25 @@
 require_once(__DIR__ . '/../../config.php');
 require_once($CFG->libdir . '/adminlib.php');
 require_once($CFG->dirroot . '/course/lib.php');
+
+
 require_login();
-$context = context_system::instance();
+$courseid = required_param('id', PARAM_INT);
+$course = $DB->get_record('course', array('id' => $courseid), '*', MUST_EXIST);
+
+$coursecontext   = context_course::instance($course->id);
+
+/*$context = context_system::instance();*/
 /*require_capability('report/analytics_dashboard:view', $context);*/
 $actionurl = new moodle_url('/report/analytics_dashboard/index.php');
-$PAGE->set_context($context);
+
+$PAGE->set_context($coursecontext);
 $PAGE->set_url('/report/analytics_dashboard/index.php');
 $PAGE->set_title(get_string('pluginname', 'report_analytics_dashboard'));
 $PAGE->set_heading(get_string('pluginname', 'report_analytics_dashboard'));
 
 echo $OUTPUT->header();
-
-$renderable = new report_analytics_dashboard_renderable();
+$renderable = new report_analytics_dashboard_renderable($course->id);
 $renderer = $PAGE->get_renderer('report_analytics_dashboard');
 
 echo $renderer->render($renderable);

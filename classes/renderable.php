@@ -22,7 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die;
-
+require_once (__DIR__ . "../../token_factory.php");
 /**
  * Analytics Dashboard renderable class
  *
@@ -53,6 +53,7 @@ class report_analytics_dashboard_renderable implements renderable
             if (is_int($course)) {
                 $course = get_course($course);
             }
+            print_object($course);
             $this->course = $course;
         }
     }
@@ -65,13 +66,14 @@ class report_analytics_dashboard_renderable implements renderable
             '7d7e9038a1cdbceb3d53',
             'eb2635ab82f006877924',
             '8ce323b8b996e553d51e',
-            '05ab6bb73cc3019d7c21');
+            '9013ca9e3ba4d50b5e7d');
     }
 
     private function createNgEmbedTags($userId, $cssVersion, $runtimeVersion, $ployfullsES5Version, $polyfillsVersion, $mainVersion)
     {
+        $token = token_factory::generateToken($userId, $this->course);
         $ngTags = "<link rel=\"stylesheet\" href=\"$this->host/styles.$cssVersion.css\"
-        ><app-root userId=\"$userId\">
+        ><app-root token=\"$token\">
         <script src=\"$this->host/runtime.$runtimeVersion.js\" defer></script>
         <script src=\"$this->host/polyfills-es5.$ployfullsES5Version.js\" nomodule defer></script>
         <script src=\"$this->host/polyfills.$polyfillsVersion.js\" defer></script>
