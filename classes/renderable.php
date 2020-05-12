@@ -66,7 +66,7 @@ class report_analytics_dashboard_renderable implements renderable
             '7d7e9038a1cdbceb3d53',
             'eb2635ab82f006877924',
             '8ce323b8b996e553d51e',
-            '9013ca9e3ba4d50b5e7d');
+            '730b775af566f24bd6f9');
     }
 
     private function createNgEmbedTags($userId, $cssVersion, $runtimeVersion, $ployfullsES5Version, $polyfillsVersion, $mainVersion)
