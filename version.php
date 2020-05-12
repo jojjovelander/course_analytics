@@ -12,7 +12,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-$plugin->version  = 2020050308;
+$plugin->version  = 2020050309;
 $plugin->requires = 2010112400;  // Requires this Moodle version - at least 2.0
 $plugin->component = 'report_analytics_dashboard';
 $plugin->cron     = 0;

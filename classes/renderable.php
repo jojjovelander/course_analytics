@@ -53,7 +53,6 @@ class report_analytics_dashboard_renderable implements renderable
             if (is_int($course)) {
                 $course = get_course($course);
             }
-            print_object($course);
             $this->course = $course;
         }
     }
