@@ -10,4 +10,4 @@ The basic workflow is as follows:
 ![Overview Image](https://raw.githubusercontent.com/jojjovelander/course_statistics_webservice/develop/overview.png)
 
 ## Moodle Dashboard Block Plugin
-This plugin is only accessible for authenticated Moodle users and is used to generate a Moodle block.  The idea is that this block can be embedded in a Moodle course's homepage to encourage users to offer users a shortcut to their usage analytics.  The plugin generates an OTP token and embeds it in the HTML for usage by an [Angular Dashboard web app](https://github.com/jojjovelander/moodle-charts) which is fetched from Firebase storage.
+This plugin is only accessible for authenticated Moodle users and is used to generate a Moodle block.  The idea is that this block can be embedded in a Moodle course's homepage to offer users a shortcut to their usage analytics.  The plugin generates an OTP token and embeds it in the HTML for usage by an [Angular Dashboard web app](https://github.com/jojjovelander/moodle-charts) which is fetched from Firebase storage.
