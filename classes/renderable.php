@@ -61,11 +61,11 @@ class report_analytics_dashboard_renderable implements renderable
     {
         global $USER;
         return $this->createNgEmbedTags($USER->id,
-            'd38827d33f32d775c3f1',
-            '7d7e9038a1cdbceb3d53',
-            'eb2635ab82f006877924',
-            '8ce323b8b996e553d51e',
-            '730b775af566f24bd6f9');
+            '92ed261d8db589852de8',
+            '359d5ee4682f20e936e9',
+            'cae3149eebd3a5dc3703',
+            '9a923f80951c4aba893e',
+            '0f167fa5f10ea2d044f2');
     }
 
     private function createNgEmbedTags($userId, $cssVersion, $runtimeVersion, $ployfullsES5Version, $polyfillsVersion, $mainVersion)
