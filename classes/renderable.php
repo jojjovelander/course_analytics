@@ -60,15 +60,10 @@ class report_analytics_dashboard_renderable implements renderable
     public function report_generate_analytics_dashboard()
     {
         global $USER;
-        return $this->createNgEmbedTags($USER->id,
-            '92ed261d8db589852de8',
-            '359d5ee4682f20e936e9',
-            'cae3149eebd3a5dc3703',
-            '9a923f80951c4aba893e',
-            '0f167fa5f10ea2d044f2');
+        return $this->createNgEmbedTags($USER->id);
     }
 
-    private function createNgEmbedTags($userId, $cssVersion, $runtimeVersion, $ployfullsES5Version, $polyfillsVersion, $mainVersion)
+    private function createNgEmbedTags($userId)
     {
         $token = token_factory::generateToken($userId, $this->course);
         $ngTags = "<link rel=\"stylesheet\" href=\"$this->host/{{ styles }}\"
