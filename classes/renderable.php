@@ -33,7 +33,7 @@ require_once(__DIR__ . "../../token_factory.php");
 class report_analytics_dashboard_renderable implements renderable
 {
     public $course;
-    private $host = "https://moodle-charts-ng.web.app";
+    private $host = "{{ angular_app_location }}";
     public $libraries = "<script src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyB7nILSkrrMM4SJn506S8dTiSpPXg7sRIk\"></script>
 <link href=\"https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap\" rel=\"stylesheet\">
 <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">
