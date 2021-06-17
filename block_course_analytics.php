@@ -23,7 +23,7 @@ class block_course_analytics extends block_base
     {
         global $USER;
         return $this->createNgEmbedTags($USER->id);
-        $this->content->text = $this->createNgEmbedTags($USER->id)
+        $this->content->text = $this->createNgEmbedTags($USER->id);
 /*            'd38827d33f32d775c3f1',
             '7d7e9038a1cdbceb3d53',
             'eb2635ab82f006877924',
