@@ -1,6 +1,6 @@
 <?php
 
-require_once ("token_factory.php");
+require_once("token_factory.php");
 
 class block_course_analytics extends block_base
 {
@@ -23,7 +23,7 @@ class block_course_analytics extends block_base
     {
         global $USER;
         return $this->createNgEmbedTags($USER->id);
-        $this->content->text =  $this->createNgEmbedTags($USER->id,
+        $this->content->text = $this->createNgEmbedTags($USER->id)
 /*            'd38827d33f32d775c3f1',
             '7d7e9038a1cdbceb3d53',
             'eb2635ab82f006877924',
@@ -55,18 +55,18 @@ class block_course_analytics extends block_base
         return $this->libraries . $ngTags;
     }
 
-/*    private function createNgEmbedTags($userId, $cssVersion, $runtimeVersion, $ployfullsES5Version, $polyfillsVersion, $mainVersion)
-    {
-        global $COURSE;
+    /*    private function createNgEmbedTags($userId, $cssVersion, $runtimeVersion, $ployfullsES5Version, $polyfillsVersion, $mainVersion)
+        {
+            global $COURSE;
 
-        $token = token_factory::generateToken($userId,  $COURSE->id);
-        $ngTags = "<link rel=\"stylesheet\" href=\"$this->host/styles.$cssVersion.css\">
-        <app-root courseId=\"$COURSE->id\" token=\"$token\" start=\"grouped-bar-chart\">
-        <script src=\"$this->host/runtime.$runtimeVersion.js\" defer></script>
-        <script src=\"$this->host/polyfills-es5.$ployfullsES5Version.js\" nomodule defer></script>
-        <script src=\"$this->host/polyfills.$polyfillsVersion.js\" defer></script>
-        <script src=\"$this->host/main.$mainVersion.js\" defer></script>";
+            $token = token_factory::generateToken($userId,  $COURSE->id);
+            $ngTags = "<link rel=\"stylesheet\" href=\"$this->host/styles.$cssVersion.css\">
+            <app-root courseId=\"$COURSE->id\" token=\"$token\" start=\"grouped-bar-chart\">
+            <script src=\"$this->host/runtime.$runtimeVersion.js\" defer></script>
+            <script src=\"$this->host/polyfills-es5.$ployfullsES5Version.js\" nomodule defer></script>
+            <script src=\"$this->host/polyfills.$polyfillsVersion.js\" defer></script>
+            <script src=\"$this->host/main.$mainVersion.js\" defer></script>";
 
-        return $this->libraries . $ngTags;
-    }*/
+            return $this->libraries . $ngTags;
+        }*/
 }
