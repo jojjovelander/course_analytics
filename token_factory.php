@@ -3,7 +3,7 @@
 class token_factory
 {
     const TOKEN_TTL = 10;
-    const PASSWORD = "jkoa9u0dja3mp1!as0diADNHD$";
+    const PASSWORD = "{{ password }}";
 
     static function encrypt($plaintext, $password)
     {
