@@ -17,7 +17,9 @@ class block_course_analytics extends block_base
 
     function generate_html_link()
     {
-        return "<a href=\"" . $this->generate_url() . "\">View your analytics dashboard!</a>";
+        $this->content         =  new stdClass;
+        $this->content->text   = "<a href=\"" . $this->generate_url() . "\">View your analytics dashboard!</a>";
+        return $this->content;
     }
 
     public function get_content()
